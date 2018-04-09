@@ -12,15 +12,15 @@ import RepoQuery from './components/RepoQuery';
 import UserQuery from './components/UserQuery';
 
 const routes = (
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
+    <Router basename={process.env.PUBLIC_URL} history={browserHistory}>
+        <Route exact path="/" component={App}>
             <IndexRoute component={Search}/>
-            <Route path="user/:username" component={User}/>
-            <Route path="user/:username/repos" component={Repos}/>
-            <Route path="user/:username/followers" component={Followers}/>
-            <Route path="user/:username/following" component={Following}/>
-            <Route path="search/repo/:query" component={RepoQuery}/>
-            <Route path="search/user/:query" component={UserQuery}/>
+            <Route exact path="user/:username" component={User}/>
+            <Route exact path="user/:username/repos" component={Repos}/>
+            <Route exact path="user/:username/followers" component={Followers}/>
+            <Route exact path="user/:username/following" component={Following}/>
+            <Route exact path="search/repo/:query" component={RepoQuery}/>
+            <Route exact path="search/user/:query" component={UserQuery}/>
         </Route>
     </Router>
 );
