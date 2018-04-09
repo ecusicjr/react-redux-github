@@ -8,6 +8,8 @@ import User from './components/User';
 import Repos from './components/Repos';
 import Followers from './components/Followers';
 import Following from './components/Following';
+import RepoQuery from './components/RepoQuery';
+import UserQuery from './components/UserQuery';
 
 const routes = (
     <Router history={browserHistory}>
@@ -17,6 +19,8 @@ const routes = (
             <Route path="user/:username/repos" component={Repos}/>
             <Route path="user/:username/followers" component={Followers}/>
             <Route path="user/:username/following" component={Following}/>
+            <Route path="search/repo/:query" component={RepoQuery}/>
+            <Route path="search/user/:query" component={UserQuery}/>
         </Route>
     </Router>
 );
